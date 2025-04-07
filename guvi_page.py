@@ -8,7 +8,6 @@ class GuviPage:
         self.driver = driver
         self.url = "https://www.guvi.in"
         self.signin_url = "https://www.guvi.in/sign-in/"
-        self.dashboard_url = "https://www.guvi.in/courses/?current_tab=myCourses"
         self.expected_title = "GUVI | Learn to code in your native language"
         self.login_button = (By.LINK_TEXT, "Login")
         self.signup_button = (By.LINK_TEXT, "Sign up")
@@ -70,6 +69,9 @@ class GuviPage:
             self.driver.find_element(*self.email).send_keys("danielprem1197@gmail.com")
             self.driver.find_element(*self.password).send_keys("DannyShelbyBrother@1197")
             self.driver.find_element(*self.submit).click()
+            
+            # After logging in, the url changes to "https://www.guvi.in/courses/?current_tab=myCourses"
+
             WebDriverWait(self.driver, 10).until(
                 expected_conditions.url_contains("courses")
             )
@@ -96,6 +98,9 @@ class GuviPage:
             self.driver.find_element(*self.email).send_keys("freakymanly@gmail.com")
             self.driver.find_element(*self.password).send_keys("password@123")
             self.driver.find_element(*self.submit).click()
+            
+            # When the login is invalid, the login button should reappear
+
             WebDriverWait(self.driver,10).until(
                 expected_conditions.visibility_of_element_located(self.login_button)
             )
