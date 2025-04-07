@@ -1,7 +1,7 @@
 import pytest
 from guvi_page import GuviPage
 
-@pytest.mark.usefixtures("invoke_browser")
+@pytest.mark.usefixtures("setup")
 class TestGuvi:
     def setup_method(self):
         self.page = GuviPage(self.driver)
