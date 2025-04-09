@@ -7,9 +7,9 @@ Browser management is handled using fixtures and implemented ChromeOptions() to 
 # Folder Structure in pycharm
 
 mini_project_1/
-├── conftest.py     # Browser setup
-├── guvi_page.py    # Page Object Model for GUVI site
-├── test_guvi.py    # Test cases using PyTest
+  > conftest.py     # Browser setup
+  > guvi_page.py    # Page Object Model for GUVI site
+  > test_guvi.py    # Test cases using PyTest
 
 # Test Cases
 
